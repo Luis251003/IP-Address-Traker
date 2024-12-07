@@ -1,0 +1,102 @@
+
+.card{
+    background-color: var(--white);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    max-width: 1024px;
+    width: 90%;
+    position: absolute;
+    top: 14rem;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+
+.card__error{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.card__info{
+    position: relative;
+    padding: 2rem;
+}
+.card__info::before {
+    content: ""; /* Pseudo-elemento vacío */
+    position: absolute;
+    top: 25%; /* Posición para centrar verticalmente el borde */
+    right: 0; /* Alinea el borde en el lado derecho */
+    height: 50%; /* Altura del borde */
+    width: 2px; /* Grosor del borde */
+    background-color: var(--gray); /* Color del borde */
+}
+
+.card__info:last-of-type::before{
+    background: none;
+}
+
+.card__title{
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+.card__text{
+    font-weight: 500;
+    font-size: 25px;
+    color: var(--very-dark-gray);
+}
+
+@media(max-width:850px){
+    .card{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,auto);
+        text-align: center;
+        padding: 1.5rem 1.5rem .5rem;
+        box-sizing: border-box;
+    }
+    .card__title{
+        font-size: 12px;   
+    }
+    .card__text{
+        margin: 1.2rem;
+        font-size: 20px;
+    }
+    .card__info{
+        padding: 0px;
+    }
+}
+@media(max-width:768px){
+    .card{
+        top: 12rem;
+    }
+}
+@media(max-width:415px){
+    .card{
+        top: auto;
+        bottom: 1rem;
+    }
+    .card__title{
+        letter-spacing: 1px;
+    }
+    .card__text{
+        margin: 1rem;
+        font-size: 16px;
+    }
+    .card__info:first-of-type{
+        display: none;
+    }
+    .card__info:nth-child(2){
+        grid-column: 1/2;
+    }
+    .card__info:nth-child(3){
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    .card__info:nth-child(4){
+        grid-column: 1/3;
+    }
+    .card__info::before {
+        background: none;
+    }
+}

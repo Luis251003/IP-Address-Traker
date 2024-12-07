@@ -1,0 +1,16 @@
+:root{
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
+    --gray: hsl(0, 0%, 80%);
+    --white: #ffffff;
+
+    --primary-font: "Rubik", sans-serif;
+}
+
+h1,h2,h3,p,input,input::placeholder{
+    font-family: var(--primary-font);
+}
+
+p{
+    font-size: 18px;
+}
